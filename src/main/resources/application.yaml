@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/store
+    username: root
+    password:
+
+app:
+  jwtSecret: JWTSuperSecretKey
+  jwtExpirationInMs: 10000
