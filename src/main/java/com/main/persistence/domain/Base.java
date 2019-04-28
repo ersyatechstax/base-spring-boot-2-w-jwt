@@ -23,6 +23,11 @@ import java.util.UUID;
 
 public abstract class Base implements Serializable {
 
+    private static final long serialVersionUID = -7369920601847524273L;
+
+    public Base() {
+    }
+
     @Id
     @GeneratedValue
     protected Integer id;

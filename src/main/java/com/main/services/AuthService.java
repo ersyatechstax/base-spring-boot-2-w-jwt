@@ -90,6 +90,15 @@ public class AuthService {
         return response;
     }
 
+    public String getCurrentUsername(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if(authentication == null){
+            throw new GeneralException("You are not authenticated");
+        }
+
+        return authentication.getName();
+    }
+
 
 
 }

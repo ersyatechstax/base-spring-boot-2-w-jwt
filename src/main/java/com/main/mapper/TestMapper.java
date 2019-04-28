@@ -15,7 +15,7 @@ public interface TestMapper {
 
 
     @Mapping(target = "id", source = "secureId")
-    TestVO ModelToVO(Test test);
+    TestVO modelToVO(Test test);
 
     Test VOToModel(TestVO testVO);
 }

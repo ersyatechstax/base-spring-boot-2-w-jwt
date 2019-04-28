@@ -1,5 +1,6 @@
 package com.main.controller;
 
+import com.main.enums.StatusCode;
 import com.main.exception.GeneralException;
 import com.main.util.RestUtil;
 import com.main.vo.ResponsePageVO;
@@ -34,14 +35,14 @@ public abstract class AbstractPageRequestHandler {
                 responsePageVO.setTotalElements(0);
                 responsePageVO.setPage(0);
                 responsePageVO.setTotalPages(0);
-                responsePageVO.setMessage(HttpStatus.OK.name());
+                responsePageVO.setMessage(StatusCode.OK.name());
                 responsePageVO.setResult(page.getContent());
             }
             else{
                 responsePageVO.setTotalElements(page.getTotalElements());
                 responsePageVO.setPage(page.getNumber());
                 responsePageVO.setTotalPages(page.getTotalPages());
-                responsePageVO.setMessage(HttpStatus.OK.name());
+                responsePageVO.setMessage(StatusCode.OK.name());
                 responsePageVO.setResult(page.getContent());
             }
         }catch (GeneralException e){

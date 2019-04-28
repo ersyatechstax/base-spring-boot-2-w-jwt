@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestVOConverter {
     public TestVO transferModelToVO(Test model){
-        TestVO vo = TestMapper.INSTANCE.ModelToVO(model);
+        TestVO vo = TestMapper.INSTANCE.modelToVO(model);
         if(model.getSecureId().contains("ab1b2d18")){
             vo.setFlag("Exclusive");
         }

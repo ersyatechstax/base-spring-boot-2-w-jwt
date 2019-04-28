@@ -1,5 +1,6 @@
 package com.main.controller;
 
+import com.main.services.AuthService;
 import com.main.services.TestService;
 import com.main.vo.ResponsePageVO;
 import com.main.vo.ResponseVO;
@@ -22,12 +23,16 @@ public class TestController {
     @Autowired
     TestService testService;
 
+    @Autowired
+    AuthService authService;
+
+
     @GetMapping("/auth")
     public ResponseEntity<ResponseVO> authenticateUser(){
         AbstractRequestHandler handler = new AbstractRequestHandler() {
             @Override
             public Object processRequest() {
-                return "You are auth";
+                return authService.getCurrentUsername();
             }
         };
         return handler.getResult();

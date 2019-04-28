@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * created by ersya 30/03/2019
  */
 @Configuration
-public class CORSFilter implements WebMvcConfigurer {
+public class CORSFilterConfig implements WebMvcConfigurer {
 
     private final long MAX_AGE_SECS = 3600;
 

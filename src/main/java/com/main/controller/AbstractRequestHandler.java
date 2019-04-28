@@ -1,5 +1,6 @@
 package com.main.controller;
 
+import com.main.enums.StatusCode;
 import com.main.exception.GeneralException;
 import com.main.util.RestUtil;
 import com.main.vo.ResponseVO;
@@ -51,11 +52,11 @@ public abstract class AbstractRequestHandler {
         try {
             Object o =  processRequest();
             if(o != null){
-                responseVO.setMessage(HttpStatus.OK.toString());
+                responseVO.setMessage(StatusCode.OK.toString());
                 responseVO.setResult(o);
             }
             else{
-                responseVO.setMessage(HttpStatus.OK.toString());
+                responseVO.setMessage(StatusCode.OK.toString());
                 responseVO.setResult(null);
             }
         }catch (GeneralException e){
